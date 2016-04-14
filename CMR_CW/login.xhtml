@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:u="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Login</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+        <div id="login-content">
+            <h:form>
+                <fieldset id="inputs">
+                    #{loginManagedBean.role}
+                    <h:inputText  value="#{loginManagedBean.AUserName}" id="username" u:placeholder="Username" />   
+                    <h:inputSecret  value="#{loginManagedBean.APassword}" id="password" u:placeholder="Password"/>
+                    <h:outputText value="#{loginManagedBean.message}" ></h:outputText>
+                </fieldset>
+                <fieldset id="actions">
+                    <h:commandButton action="#{loginManagedBean.login()}"  value="login" id="submit"/>                                            
+                </fieldset>
+            </h:form>
+        </div>
+    </h:body>
+</html>
